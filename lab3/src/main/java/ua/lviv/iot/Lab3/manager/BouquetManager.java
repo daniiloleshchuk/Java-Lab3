@@ -3,7 +3,6 @@ package ua.lviv.iot.Lab3.manager;
 import ua.lviv.iot.Lab3.model.Flower;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class BouquetManager {

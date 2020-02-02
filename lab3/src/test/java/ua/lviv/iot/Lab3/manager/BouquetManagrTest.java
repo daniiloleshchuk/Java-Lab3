@@ -12,11 +12,11 @@ public class BouquetManagrTest {
     private BouquetManager bouquet;
 
     @BeforeEach
-    public void testCreateBouquetAndFlowers(){
+    public void testCreateBouquetAndFlowers() {
         bouquet = new BouquetManager();
-        bouquet.addFlowerToBouquet(new Flower("flower","red",20,70,"rose"));
-        bouquet.addFlowerToBouquet(new Flower("flower","white",10,25,"romashka"));
-        bouquet.addFlowerToBouquet(new Flower("flower","purple",15,40,"fialka"));
+        bouquet.addFlowerToBouquet(new Flower("flower", "red", 20, 70, "rose"));
+        bouquet.addFlowerToBouquet(new Flower("flower", "white", 10, 25, "romashka"));
+        bouquet.addFlowerToBouquet(new Flower("flower", "purple", 15, 40, "fialka"));
     }
 
     @Test
