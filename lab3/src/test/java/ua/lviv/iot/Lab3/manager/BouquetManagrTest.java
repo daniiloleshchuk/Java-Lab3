@@ -29,4 +29,13 @@ public class BouquetManagrTest {
         Assertions.assertEquals(40, foundFlowers.get(1).getPriceInUAH());
     }
 
+    @Test
+    public void testFindFlowerWithColor(){
+        List<Flower> foundFlowers = bouquet.findFlowerWithColor("red");
+
+        Assertions.assertEquals(1,foundFlowers.size());
+
+        Assertions.assertEquals("red",foundFlowers.get(0).getColor());
+    }
+
 }
