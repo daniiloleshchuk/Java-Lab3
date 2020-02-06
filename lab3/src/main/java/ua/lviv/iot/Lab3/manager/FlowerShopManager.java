@@ -5,7 +5,7 @@ import ua.lviv.iot.Lab3.model.Product;
 import java.util.ArrayList;
 
 public class FlowerShopManager {
-    ArrayList<Product> assortment = new ArrayList<Product>();
+    private ArrayList<Product> assortment = new ArrayList<Product>();
 
     public void addToAssortment(Product... productsToAdd) {
         for (Product product : productsToAdd) {
