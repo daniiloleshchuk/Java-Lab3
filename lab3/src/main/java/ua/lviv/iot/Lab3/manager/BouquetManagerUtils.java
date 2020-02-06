@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class BouquetManagerUtils {
+
     public static void sortFlowersInBouquetByPrice(List<Flower> bouquet, SortType sortType) {
         System.out.println("called 'sortFlowersInBouquetByPrice' func");
         if (sortType == SortType.ASCENDING) {
