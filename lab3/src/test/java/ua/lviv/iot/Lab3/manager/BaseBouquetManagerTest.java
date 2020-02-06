@@ -1,4 +1,3 @@
-
 package ua.lviv.iot.Lab3.manager;
 
 

@@ -1,9 +1,7 @@
-
 package ua.lviv.iot.Lab3.manager;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-
 import org.junit.jupiter.api.Test;
 import ua.lviv.iot.Lab3.model.Flower;
 
@@ -29,11 +27,11 @@ public class BouquetManagerTest extends BaseBouquetManagerTest {
     }
 
     @Test
-    public void testFindFlowerWithColor(){
+    public void testFindFlowerWithColor() {
         List<Flower> foundFlowers = bouquetManager.findFlowerWithColor("red");
 
-        Assertions.assertEquals(1,foundFlowers.size());
+        Assertions.assertEquals(1, foundFlowers.size());
 
-        Assertions.assertEquals("red",foundFlowers.get(0).getColor());
+        Assertions.assertEquals("red", foundFlowers.get(0).getColor());
     }
 }
