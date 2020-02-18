@@ -7,16 +7,19 @@ public class Vase extends Product {
         this(null, null, 0, 0, 0);
     }
 
-    public Vase(String typeOfProduct, String color, int heightInSm, double priceInUAH, int volumeInMl) {
+    public Vase(
+            final String typeOfProduct,
+            final String color, final int heightInSm,
+            final double priceInUAH, final int volumeOfVaseInMl) {
         super(typeOfProduct, color, heightInSm, priceInUAH);
-        this.volumeInMl = volumeInMl;
+        this.volumeInMl = volumeOfVaseInMl;
     }
 
-    public int getVolumeInMl() {
+    public final int getVolumeInMl() {
         return volumeInMl;
     }
 
-    public void setVolumeInMl(int volumeInMl) {
-        this.volumeInMl = volumeInMl;
+    public final void setVolumeInMl(final int volumeOfVaseInMl) {
+        this.volumeInMl = volumeOfVaseInMl;
     }
 }
