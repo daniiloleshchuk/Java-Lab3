@@ -7,19 +7,19 @@ import java.util.ArrayList;
 public class FlowerShopManager {
     private ArrayList<Product> assortment = new ArrayList<Product>();
 
-    public void addToAssortment(Product... productsToAdd) {
+    public final void addToAssortment(final Product ... productsToAdd) {
         for (Product product : productsToAdd) {
             this.assortment.add(product);
         }
     }
 
-    public void removeFromAssortment(Product... productsToRemove) {
+    public final void removeFromAssortment(final Product... productsToRemove) {
         for (Product product : productsToRemove) {
             this.assortment.remove(product);
         }
     }
 
-    public void displayAssortmentInfo() {
+    public final void displayAssortmentInfo() {
         for (Product product : this.assortment) {
             System.out.println(product);
         }

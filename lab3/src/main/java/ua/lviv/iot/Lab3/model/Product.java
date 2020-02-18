@@ -10,42 +10,44 @@ public abstract class Product {
         this(null, null, 0, 0);
     }
 
-    public Product(String typeOfProduct, String color, int heightInSm, double priceInUAH) {
-        this.typeOfProduct = typeOfProduct;
-        this.color = color;
-        this.heightInSm = heightInSm;
-        this.priceInUAH = priceInUAH;
+    public Product(
+            final String productType, final String colorOfProduct,
+            final int heightOfProductInSm, final double priceOfProductInUAH) {
+        this.typeOfProduct = productType;
+        this.color = colorOfProduct;
+        this.heightInSm = heightOfProductInSm;
+        this.priceInUAH = priceOfProductInUAH;
     }
 
-    public String getTypeOfProduct() {
+    public final String getTypeOfProduct() {
         return typeOfProduct;
     }
 
-    public void setTypeOfProduct(String typeOfProduct) {
-        this.typeOfProduct = typeOfProduct;
+    public final void setTypeOfProduct(final String productType) {
+        this.typeOfProduct = productType;
     }
 
-    public String getColor() {
+    public final String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public final void setColor(final String colorOfProduct) {
+        this.color = colorOfProduct;
     }
 
-    public int getHeightInSm() {
+    public final int getHeightInSm() {
         return heightInSm;
     }
 
-    public void setHeightInSm(int heightInSm) {
-        this.heightInSm = heightInSm;
+    public final void setHeightInSm(final int heightOfProductInSm) {
+        this.heightInSm = heightOfProductInSm;
     }
 
-    public double getPriceInUAH() {
+    public final double getPriceInUAH() {
         return priceInUAH;
     }
 
-    public void setPriceInUAH(double priceInUAH) {
-        this.priceInUAH = priceInUAH;
+    public final void setPriceInUAH(final double priceOfProductInUAH) {
+        this.priceInUAH = priceOfProductInUAH;
     }
 }

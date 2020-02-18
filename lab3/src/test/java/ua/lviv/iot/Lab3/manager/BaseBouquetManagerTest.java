@@ -13,9 +13,9 @@ public abstract class BaseBouquetManagerTest {
     @BeforeEach
     public void addFlowersToBouquet() {
         bouquet = new ArrayList<Flower>();
-        bouquet.add(new Flower("flower", "red", 20, 70, "rose"));
-        bouquet.add(new Flower("flower", "white", 10, 25, "romashka"));
-        bouquet.add(new Flower("flower", "purple", 15, 40, "fialka"));
+        bouquet.add(new Flower("flower", "red", 20, 70, "rose", 6));
+        bouquet.add(new Flower("flower", "white", 10, 25, "romashka", 2));
+        bouquet.add(new Flower("flower", "purple", 15, 40, "fialka", 3));
     }
 
 }

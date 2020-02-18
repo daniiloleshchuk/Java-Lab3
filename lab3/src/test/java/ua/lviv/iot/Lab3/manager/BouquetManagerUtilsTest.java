@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import ua.lviv.iot.Lab3.model.SortType;
 
 public class BouquetManagerUtilsTest extends BaseBouquetManagerTest {
+
     @Test
     public void testSortBouquetByPriceAsc() {
         BouquetManagerUtils.sortFlowersInBouquetByPrice(bouquet, SortType.ASCENDING);
@@ -20,5 +21,6 @@ public class BouquetManagerUtilsTest extends BaseBouquetManagerTest {
         Assertions.assertEquals(15, bouquet.get(1).getHeightInSm());
         Assertions.assertEquals(20, bouquet.get(2).getHeightInSm());
     }
+
 
 }
