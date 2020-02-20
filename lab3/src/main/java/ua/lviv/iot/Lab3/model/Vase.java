@@ -15,6 +15,14 @@ public class Vase extends Product {
         this.volumeInMl = volumeOfVaseInMl;
     }
 
+    public final String getHeaders() {
+        return super.getHeaders() + "," + " volumeInMl";
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + "," + " volumeInMl = " + getVolumeInMl();
+    }
+
     public final int getVolumeInMl() {
         return volumeInMl;
     }

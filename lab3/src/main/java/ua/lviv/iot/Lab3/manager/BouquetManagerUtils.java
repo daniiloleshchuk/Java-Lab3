@@ -56,7 +56,7 @@ public class BouquetManagerUtils {
         return compareByColor;
     }
 
-    public final void  setCompareByColor(
+    public final void setCompareByColor(
             final Comparator<Flower> compareViaColor) {
         this.compareByColor = compareViaColor;
     }

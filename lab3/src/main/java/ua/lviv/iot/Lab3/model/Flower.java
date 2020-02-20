@@ -17,6 +17,17 @@ public class Flower extends Product {
         this.howMuchDaysCanLive = howMuchDaysLive;
     }
 
+    public final String getHeaders() {
+        return super.getHeaders()
+                + "," + " typeOfFlower" + "," + " howMuchDaysCanLive ";
+    }
+
+    public final String toCSV() {
+        return super.toCSV()
+                + "," + " typeOfFlower = " + getTypeOfFlower()
+                + "," + " howMuchDaysCanLive = " + getHowMuchDaysCanLive();
+    }
+
     public final String getTypeOfFlower() {
         return typeOfFlower;
     }
