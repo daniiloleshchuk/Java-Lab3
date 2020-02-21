@@ -6,8 +6,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public abstract class ProductWriter {
-    public static void inputTextToFile(
-            final String fileName, final String... lines) throws IOException {
+    public static void inputTextToFile(final String fileName, final String... lines) throws IOException {
         final File file = new File(fileName);
         Writer textWriter = new FileWriter(file);
         for (String line : lines) {

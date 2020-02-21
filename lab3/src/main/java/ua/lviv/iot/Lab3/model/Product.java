@@ -20,10 +20,7 @@ public abstract class Product {
     }
 
     public String getHeaders() {
-        return "typeOfProduct" + ","
-                + " color " + ","
-                + " heightInSm" + ","
-                + " priceInUAH";
+        return "typeOfProduct" + "," + " color " + "," + " heightInSm" + "," + " priceInUAH";
     }
 
     public String toCSV() {
