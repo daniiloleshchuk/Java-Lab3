@@ -38,8 +38,13 @@ public class BouquetManagerUtils {
     }
 
     //method that sorts via lambda
-    public static void sortingByLivingDays(final ArrayList<Flower> bouquet) {
-        bouquet.sort((o1, o2) -> o1.getHowMuchDaysCanLive() - o2.getHowMuchDaysCanLive());
+    public static void sortingByLivingDays(final ArrayList<Flower> bouquet, SortType sortType) {
+        if (sortType == SortType.ASCENDING){
+            bouquet.sort((o1, o2) -> o1.getHowMuchDaysCanLive() - o2.getHowMuchDaysCanLive());
+        } if(sortType == SortType.DESCENDING) {
+            bouquet.sort((o1, o2) -> o2.getHowMuchDaysCanLive() - o1.getHowMuchDaysCanLive());
+        }
+
     }
 
     //method that uses inner class with comparator

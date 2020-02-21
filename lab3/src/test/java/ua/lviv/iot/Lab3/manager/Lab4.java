@@ -28,11 +28,10 @@ public class Lab4 extends BaseBouquetManagerTest {
         System.out.println(bouquet.get(1).getColor());
         System.out.println(bouquet.get(2).getColor());
     }
-
-    //add reverser method to class              !!!!                !!!!            !!!!
+    
     @Test
     void sortViaLambda() {
-        BouquetManagerUtils.sortingByLivingDays(bouquet);
+        BouquetManagerUtils.sortingByLivingDays(bouquet,SortType.DESCENDING);
         System.out.println(bouquet.get(0).getHowMuchDaysCanLive());
         System.out.println(bouquet.get(1).getHowMuchDaysCanLive());
         System.out.println(bouquet.get(2).getHowMuchDaysCanLive());
