@@ -18,7 +18,6 @@ public abstract class ProductWriter {
 
     public static void outputTextOfFile(final String file) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get(file));
-        BufferedReader textReader = new BufferedReader(new FileReader(file));
         for (String line : lines) {
             System.out.println(line);
         }

@@ -28,7 +28,7 @@ public class Lab4 extends BaseBouquetManagerTest {
         System.out.println(bouquet.get(1).getColor());
         System.out.println(bouquet.get(2).getColor());
     }
-    
+
     @Test
     void sortViaLambda() {
         BouquetManagerUtils.sortingByLivingDays(bouquet,SortType.DESCENDING);
