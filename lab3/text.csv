@@ -1,0 +1,2 @@
+typeOfProduct = flower, color = red, heightInSm = 20, priceInUAH = 70.0, typeOfFlower = rose, howMuchDaysCanLive = 6
+typeOfProduct = Vase, color = blue, heightInSm = 30, priceInUAH = 250.0, volumeInMl = 500

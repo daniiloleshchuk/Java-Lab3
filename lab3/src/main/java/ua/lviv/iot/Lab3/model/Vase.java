@@ -7,12 +7,19 @@ public class Vase extends Product {
         this(null, null, 0, 0, 0);
     }
 
-    public Vase(
-            final String typeOfProduct,
-            final String color, final int heightInSm,
-            final double priceInUAH, final int volumeOfVaseInMl) {
+    public Vase(final String typeOfProduct, final String color,
+                final int heightInSm, final double priceInUAH,
+                final int volumeOfVaseInMl) {
         super(typeOfProduct, color, heightInSm, priceInUAH);
         this.volumeInMl = volumeOfVaseInMl;
+    }
+
+    public final String getHeaders() {
+        return super.getHeaders() + "," + " volumeInMl";
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + "," + " volumeInMl = " + getVolumeInMl();
     }
 
     public final int getVolumeInMl() {

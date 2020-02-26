@@ -19,6 +19,18 @@ public abstract class Product {
         this.priceInUAH = priceOfProductInUAH;
     }
 
+    public String getHeaders() {
+        return "typeOfProduct" + "," + " color " + "," + " heightInSm" + "," + " priceInUAH";
+    }
+
+    public String toCSV() {
+        return "typeOfProduct = " + getTypeOfProduct() + ","
+                + " color = " + getColor() + ","
+                + " heightInSm = " + getHeightInSm() + ","
+                + " priceInUAH = " + getPriceInUAH();
+    }
+
+
     public final String getTypeOfProduct() {
         return typeOfProduct;
     }

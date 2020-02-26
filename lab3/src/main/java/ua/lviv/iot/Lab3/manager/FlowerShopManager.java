@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class FlowerShopManager {
     private ArrayList<Product> assortment = new ArrayList<Product>();
 
-    public final void addToAssortment(final Product ... productsToAdd) {
+    public final void addToAssortment(final Product... productsToAdd) {
         for (Product product : productsToAdd) {
             this.assortment.add(product);
         }
