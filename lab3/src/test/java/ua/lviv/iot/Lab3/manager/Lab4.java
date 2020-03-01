@@ -31,7 +31,7 @@ public class Lab4 extends BaseBouquetManagerTest {
 
     @Test
     void sortViaLambda() {
-        BouquetManagerUtils.sortingByLivingDays(bouquet,SortType.DESCENDING);
+        BouquetManagerUtils.sortingByLivingDays(bouquet, SortType.DESCENDING);
         System.out.println(bouquet.get(0).getHowMuchDaysCanLive());
         System.out.println(bouquet.get(1).getHowMuchDaysCanLive());
         System.out.println(bouquet.get(2).getHowMuchDaysCanLive());

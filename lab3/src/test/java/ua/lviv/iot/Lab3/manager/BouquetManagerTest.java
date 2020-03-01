@@ -8,6 +8,7 @@ import ua.lviv.iot.Lab3.model.Flower;
 import java.util.List;
 
 public class BouquetManagerTest extends BaseBouquetManagerTest {
+
     private BouquetManager bouquetManager;
 
     @BeforeEach
