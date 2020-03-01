@@ -19,22 +19,6 @@ public class BouquetManagerUtils {
         }
     };
 
-    //static inner class with comparator
-    private static class FlowersInBouquetSorterByHeight implements Comparator<Flower> {
-        @Override
-        public int compare(final Flower firstFlower, final Flower secondFlower) {
-            return firstFlower.getHeightInSm() - secondFlower.getHeightInSm();
-        }
-    }
-
-    //inner class with comparator
-    private class FlowersInBouquetSorterByPrice implements Comparator<Flower> {
-        @Override
-        public int compare(final Flower firstFlower, final Flower secondFlower) {
-            return (int) (firstFlower.getPriceInUAH() - secondFlower.getPriceInUAH());
-        }
-    }
-
     //method that uses anon class with comparator
     public static void sortByColor(final List<Flower> bouquet, final SortType sortType) {
         if (sortType == SortType.ASCENDING) {
@@ -81,5 +65,21 @@ public class BouquetManagerUtils {
 
     public final void setCompareByColor(final Comparator<Flower> compareViaColor) {
         this.compareByColor = compareViaColor;
+    }
+
+    //static inner class with comparator
+    private static class FlowersInBouquetSorterByHeight implements Comparator<Flower> {
+        @Override
+        public int compare(final Flower firstFlower, final Flower secondFlower) {
+            return firstFlower.getHeightInSm() - secondFlower.getHeightInSm();
+        }
+    }
+
+    //inner class with comparator
+    private class FlowersInBouquetSorterByPrice implements Comparator<Flower> {
+        @Override
+        public int compare(final Flower firstFlower, final Flower secondFlower) {
+            return (int) (firstFlower.getPriceInUAH() - secondFlower.getPriceInUAH());
+        }
     }
 }
