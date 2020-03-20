@@ -5,6 +5,7 @@ public abstract class Product {
     private String color;
     private int heightInSm;
     private double priceInUAH;
+    private Integer id;
 
     public Product() {
         this(null, null, 0, 0);
@@ -61,5 +62,13 @@ public abstract class Product {
 
     public final void setPriceInUAH(final double priceOfProductInUAH) {
         this.priceInUAH = priceOfProductInUAH;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
