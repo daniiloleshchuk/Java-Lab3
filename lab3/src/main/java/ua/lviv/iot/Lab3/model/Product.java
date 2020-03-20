@@ -64,11 +64,11 @@ public abstract class Product {
         this.priceInUAH = priceOfProductInUAH;
     }
 
-    public Integer getId() {
+    public final Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public final void setId(final Integer id) {
         this.id = id;
     }
 }
