@@ -1,7 +1,9 @@
 package ua.lviv.iot.Lab3.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.lviv.iot.Lab3.dataaccess.FlowerRepository;
 import ua.lviv.iot.Lab3.model.Flower;
@@ -39,8 +41,9 @@ public class FlowerController {
     }
 
     @PutMapping(path = "/{id}")
-    public final Flower updateFlowerById(final @PathVariable("id") Integer flowerId,
-                                         final @RequestBody Flower newFlower) {
+    public final ResponseEntity<Object> updateFlowerById(final @PathVariable("id") Integer flowerId,
+                                                         final @RequestBody Flower newFlower) {
+
         /*
         return flowerRepository.findById(flowerId).map(product -> {
             product.setColor(newFlower.getColor());
@@ -51,14 +54,24 @@ public class FlowerController {
         }).get();
 
          */
-        Flower flower = flowerRepository.findById(flowerId).orElseThrow(NullPointerException::new);
-        flower.setColor(newFlower.getColor());
-        flower.setHeightInSm(newFlower.getHeightInSm());
-        flower.setPriceInUAH(newFlower.getPriceInUAH());
-        flower.setTypeOfProduct(newFlower.getTypeOfProduct());
-        flower.setTypeOfFlower(newFlower.getTypeOfFlower());
-        flower.setHowMuchDaysCanLive(newFlower.getHowMuchDaysCanLive());
-        return flowerRepository.save(flower);
+
+        HttpStatus status;
+
+        if(flowerRepository.existsById(flowerId)) {
+            Flower flower = flowerRepository.findById(flowerId).orElseThrow(NullPointerException::new);
+            flower.setColor(newFlower.getColor());
+            flower.setHeightInSm(newFlower.getHeightInSm());
+            flower.setPriceInUAH(newFlower.getPriceInUAH());
+            flower.setTypeOfProduct(newFlower.getTypeOfProduct());
+            flower.setTypeOfFlower(newFlower.getTypeOfFlower());
+            flower.setHowMuchDaysCanLive(newFlower.getHowMuchDaysCanLive());
+            flowerRepository.save(flower);
+            status = HttpStatus.OK;
+        } else {
+            status = HttpStatus.NOT_FOUND;
+
+        }
+        return ResponseEntity.status(status).build();
     }
 
 }
