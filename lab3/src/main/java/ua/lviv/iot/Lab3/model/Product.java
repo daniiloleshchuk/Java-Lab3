@@ -1,11 +1,25 @@
 package ua.lviv.iot.Lab3.model;
 
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Product {
-    private String typeOfProduct;
-    private String color;
-    private int heightInSm;
-    private double priceInUAH;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    private String typeOfProduct;
+
+    private String color;
+
+    private int heightInSm;
+
+    private double priceInUAH;
 
     public Product() {
         this(null, null, 0, 0);
@@ -32,43 +46,43 @@ public abstract class Product {
     }
 
 
-    public final String getTypeOfProduct() {
+    public String getTypeOfProduct() {
         return typeOfProduct;
     }
 
-    public final void setTypeOfProduct(final String productType) {
+    public void setTypeOfProduct(final String productType) {
         this.typeOfProduct = productType;
     }
 
-    public final String getColor() {
+    public String getColor() {
         return color;
     }
 
-    public final void setColor(final String colorOfProduct) {
+    public void setColor(final String colorOfProduct) {
         this.color = colorOfProduct;
     }
 
-    public final int getHeightInSm() {
+    public int getHeightInSm() {
         return heightInSm;
     }
 
-    public final void setHeightInSm(final int heightOfProductInSm) {
+    public void setHeightInSm(final int heightOfProductInSm) {
         this.heightInSm = heightOfProductInSm;
     }
 
-    public final double getPriceInUAH() {
+    public double getPriceInUAH() {
         return priceInUAH;
     }
 
-    public final void setPriceInUAH(final double priceOfProductInUAH) {
+    public void setPriceInUAH(final double priceOfProductInUAH) {
         this.priceInUAH = priceOfProductInUAH;
     }
 
-    public final Integer getId() {
+    public Integer getId() {
         return id;
     }
 
-    public final void setId(final Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 }
