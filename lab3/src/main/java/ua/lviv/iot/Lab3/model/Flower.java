@@ -29,8 +29,8 @@ public class Flower extends Product {
         return typeOfFlower;
     }
 
-    public final void setTypeOfFlower(final String flowerType) {
-        this.typeOfFlower = flowerType;
+    public final void setTypeOfFlower(final String typeOfFlower) {
+        this.typeOfFlower = typeOfFlower;
     }
 
     public final int getHowMuchDaysCanLive() {
