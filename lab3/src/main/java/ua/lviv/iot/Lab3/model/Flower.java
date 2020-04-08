@@ -1,11 +1,5 @@
 package ua.lviv.iot.Lab3.model;
 
-import org.hibernate.annotations.DynamicUpdate;
-
-import javax.persistence.Entity;
-
-@Entity
-@DynamicUpdate
 public class Flower extends Product {
     private String typeOfFlower;
     private int howMuchDaysCanLive;
@@ -31,19 +25,19 @@ public class Flower extends Product {
                 + " howMuchDaysCanLive = " + getHowMuchDaysCanLive();
     }
 
-    public String getTypeOfFlower() {
+    public final String getTypeOfFlower() {
         return typeOfFlower;
     }
 
-    public void setTypeOfFlower(final String typeOfFlower) {
+    public final void setTypeOfFlower(final String typeOfFlower) {
         this.typeOfFlower = typeOfFlower;
     }
 
-    public int getHowMuchDaysCanLive() {
+    public final int getHowMuchDaysCanLive() {
         return howMuchDaysCanLive;
     }
 
-    public void setHowMuchDaysCanLive(final int howMuchDaysLive) {
+    public final void setHowMuchDaysCanLive(final int howMuchDaysLive) {
         this.howMuchDaysCanLive = howMuchDaysLive;
     }
 }
