@@ -10,10 +10,8 @@ import javax.persistence.MappedSuperclass;
 public abstract class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
-    private String typeOfProduct;
 
     private String color;
 
@@ -22,13 +20,11 @@ public abstract class Product {
     private double priceInUAH;
 
     public Product() {
-        this(null, null, 0, 0);
     }
 
     public Product(
-            final String productType, final String colorOfProduct,
+            final String colorOfProduct,
             final int heightOfProductInSm, final double priceOfProductInUAH) {
-        this.typeOfProduct = productType;
         this.color = colorOfProduct;
         this.heightInSm = heightOfProductInSm;
         this.priceInUAH = priceOfProductInUAH;
@@ -39,20 +35,12 @@ public abstract class Product {
     }
 
     public String toCSV() {
-        return "typeOfProduct = " + getTypeOfProduct() + ","
+        return "typeOfProduct = "
                 + " color = " + getColor() + ","
                 + " heightInSm = " + getHeightInSm() + ","
                 + " priceInUAH = " + getPriceInUAH();
     }
 
-
-    public String getTypeOfProduct() {
-        return typeOfProduct;
-    }
-
-    public void setTypeOfProduct(final String productType) {
-        this.typeOfProduct = productType;
-    }
 
     public String getColor() {
         return color;

@@ -10,7 +10,7 @@ public class Vase extends Product {
     public Vase(final String typeOfProduct, final String color,
                 final int heightInSm, final double priceInUAH,
                 final int volumeOfVaseInMl) {
-        super(typeOfProduct, color, heightInSm, priceInUAH);
+        super(color, heightInSm, priceInUAH);
         this.volumeInMl = volumeOfVaseInMl;
     }
 

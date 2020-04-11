@@ -8,12 +8,12 @@ import ua.lviv.iot.Lab3.model.Vase;
 
 import java.io.IOException;
 import java.io.StringWriter;
-
+/*
 public class Lab5 {
 
     @Test
     public void inputManager() throws IOException {
-        Flower rose = new Flower("flower", "red", 20, 70, "rose", 6);
+        Flower rose = new Flower("flower", "red", 20, 70, 6);
         Vase vase = new Vase("Vase", "blue", 30, 250, 500);
         ProductWriter.inputStaticTextToFile("text.csv", rose.toCSV(), vase.toCSV());
     }
@@ -25,7 +25,7 @@ public class Lab5 {
 
     @Test
     public void inputAndOutputTest() throws IOException {
-        Flower rose = new Flower("flower", "red", 20, 70, "rose", 6);
+        Flower rose = new Flower("flower", "red", 20, 70, 6);
         Vase vase = new Vase("Vase", "blue", 30, 250, 500);
         ProductWriter.inputStaticTextToFile("text.csv", rose.toCSV(), vase.toCSV());
         ProductWriter.outputStaticTextOfFile("text.csv");
@@ -34,7 +34,7 @@ public class Lab5 {
     @Test
     public void stringWriterTest() throws IOException {
         try {
-            Flower rose = new Flower("flower", "red", 20, 70, "rose", 6);
+            Flower rose = new Flower("flower", "red", 20, 70, 6);
             ProductWriter productStringWriter = new ProductWriter(new StringWriter());
             productStringWriter.inputText(rose.toCSV());
             String expectedExpression = rose.toCSV() + "\r\n";
@@ -44,3 +44,6 @@ public class Lab5 {
         }
     }
 }
+
+
+ */

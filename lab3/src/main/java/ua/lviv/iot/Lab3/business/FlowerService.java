@@ -46,8 +46,6 @@ public class FlowerService {
             flower.setColor(newFlower.getColor());
             flower.setHeightInSm(newFlower.getHeightInSm());
             flower.setPriceInUAH(newFlower.getPriceInUAH());
-            flower.setTypeOfProduct(newFlower.getTypeOfProduct());
-            flower.setTypeOfFlower(newFlower.getTypeOfFlower());
             flower.setHowMuchDaysCanLive(newFlower.getHowMuchDaysCanLive());
             flowerRepository.save(flower);
             return flower;
