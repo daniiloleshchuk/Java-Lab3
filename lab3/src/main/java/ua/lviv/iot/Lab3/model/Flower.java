@@ -16,12 +16,15 @@ public class Flower extends Product {
     private FlowerType flowerType;
 
 
-    @ManyToMany(mappedBy = "flowers")
+    @ManyToMany(fetch = FetchType.EAGER)
     /*
     @JoinTable(name = "Flowers_Localities",
             joinColumns = { @JoinColumn(name = "flower_id", nullable=false)},
             inverseJoinColumns = { @JoinColumn(name = "flower_locality_id", nullable=false)})
      */
+    @JoinTable(name = "Flowers_Localities",
+            joinColumns = { @JoinColumn(name = "flower_id", nullable=false)},
+            inverseJoinColumns = { @JoinColumn(name = "flower_locality_id", nullable=true)})
     @JsonIgnoreProperties("flowers")
     private Set<FlowerLocality> localities;
 
