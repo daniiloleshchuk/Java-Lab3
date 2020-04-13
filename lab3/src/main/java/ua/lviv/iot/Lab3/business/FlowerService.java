@@ -30,17 +30,6 @@ public class FlowerService {
     }
 
     public final Flower updateFlowerById(Integer flowerId, Flower newFlower) {
-
-        /*
-        return flowerRepository.findById(flowerId).map(product -> {
-            product.setColor(newFlower.getColor());
-            product.setHeightInSm(newFlower.getHeightInSm());
-            product.setPriceInUAH(newFlower.getPriceInUAH());
-            product.setTypeOfProduct(newFlower.getTypeOfProduct());
-            return flowerRepository.save(newFlower);
-        }).get();
-
-         */
         if (flowerRepository.existsById(flowerId)) {
             Flower flower = flowerRepository.findById(flowerId).orElseThrow(NullPointerException::new);
             flower.setColor(newFlower.getColor());

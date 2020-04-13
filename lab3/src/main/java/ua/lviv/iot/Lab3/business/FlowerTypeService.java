@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import ua.lviv.iot.Lab3.dataaccess.FlowerTypeRepository;
 import ua.lviv.iot.Lab3.model.FlowerType;
 
-import java.util.List;
-
 @Service
 public class FlowerTypeService extends AbstractService<FlowerType> {
 

@@ -2,10 +2,8 @@ package ua.lviv.iot.Lab3.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.lviv.iot.Lab3.business.FlowerTypeService;
-import ua.lviv.iot.Lab3.model.Flower;
 import ua.lviv.iot.Lab3.model.FlowerType;
 
 import java.util.List;
