@@ -1,5 +1,6 @@
 package ua.lviv.iot.Lab3.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -32,6 +33,7 @@ public class Flower extends Product {
         super();
     }
 
+    @JsonIgnore
     public final String getHeaders() {
         return super.getHeaders() + "," + " typeOfFlower" + "," + " howMuchDaysCanLive ";
     }
