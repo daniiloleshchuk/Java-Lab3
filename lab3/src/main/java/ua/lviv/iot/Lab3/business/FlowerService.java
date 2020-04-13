@@ -13,23 +13,23 @@ public class FlowerService {
     @Autowired
     private FlowerRepository flowerRepository;
 
-    public List getFlowers() {
+    public final List getFlowers() {
         return flowerRepository.findAll();
     }
 
-    public final Flower getFlowerById(Integer flowerId) {
+    public final Flower getFlowerById(final Integer flowerId) {
         return flowerRepository.findById(flowerId).get();
     }
 
-    public Flower createFlower(Flower flower) {
+    public final Flower createFlower(Flower flower) {
         return flowerRepository.save(flower);
     }
 
-    public final void deleteFlowerById(Integer flowerId) {
+    public final void deleteFlowerById(final Integer flowerId) {
         flowerRepository.deleteById(flowerId);
     }
 
-    public final Flower updateFlowerById(Integer flowerId, Flower newFlower) {
+    public final Flower updateFlowerById(final Integer flowerId, final Flower newFlower) {
         if (flowerRepository.existsById(flowerId)) {
             Flower flower = flowerRepository.findById(flowerId).orElseThrow(NullPointerException::new);
             flower.setColor(newFlower.getColor());

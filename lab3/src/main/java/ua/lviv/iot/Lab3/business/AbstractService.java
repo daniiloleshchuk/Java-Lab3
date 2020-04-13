@@ -8,21 +8,21 @@ import java.util.List;
 
 public abstract class AbstractService<T> {
 
-    protected abstract JpaRepository<T,Integer> getRepository();
+    protected abstract JpaRepository<T, Integer> getRepository();
 
-    public List findAll(){
+    public final List findAll() {
         return getRepository().findAll();
     }
 
-    public T findById(Integer id){
+    public final T findById(Integer id) {
         return  getRepository().findById(id).get();
     }
 
-    public T create(T t){
+    public final T create(final T t){
         return  getRepository().save(t);
     }
 
-    public void deleteById(Integer id){
+    public final void deleteById(final Integer id) {
         getRepository().deleteById(id);
     }
 

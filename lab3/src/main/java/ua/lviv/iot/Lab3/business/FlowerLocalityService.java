@@ -14,7 +14,7 @@ public class FlowerLocalityService extends AbstractService<FlowerLocality> {
     private FlowerLocalityRepository flowerLocalityRepository;
 
     @Override
-    protected JpaRepository<FlowerLocality, Integer> getRepository() {
+    protected final JpaRepository<FlowerLocality, Integer> getRepository() {
         return flowerLocalityRepository;
     }
 

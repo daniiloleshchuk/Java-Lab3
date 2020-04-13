@@ -13,7 +13,7 @@ public class FlowerTypeService extends AbstractService<FlowerType> {
     private FlowerTypeRepository flowerTypeRepository;
 
     @Override
-    protected JpaRepository<FlowerType, Integer> getRepository() {
+    protected final JpaRepository<FlowerType, Integer> getRepository() {
         return flowerTypeRepository;
     }
 

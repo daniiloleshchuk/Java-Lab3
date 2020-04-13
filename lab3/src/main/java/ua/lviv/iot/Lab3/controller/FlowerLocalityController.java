@@ -16,22 +16,22 @@ public class FlowerLocalityController {
     private FlowerLocalityService flowerLocalityService;
 
     @GetMapping
-    public List<FlowerLocality> findAll(){
+    public final List<FlowerLocality> findAll() {
         return flowerLocalityService.findAll();
     }
 
     @GetMapping("/{id}")
-    public FlowerLocality findById(final @PathVariable Integer id){
+    public final FlowerLocality findById(final @PathVariable Integer id) {
         return flowerLocalityService.findById(id);
     }
 
     @PostMapping
-    public FlowerLocality createFlowerLocality(final @RequestBody FlowerLocality flowerLocality){
+    public final FlowerLocality createFlowerLocality(final @RequestBody FlowerLocality flowerLocality) {
         return flowerLocalityService.create(flowerLocality);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(final @PathVariable Integer id){
+    public final void deleteById(final @PathVariable Integer id) {
         flowerLocalityService.deleteById(id);
     }
 
