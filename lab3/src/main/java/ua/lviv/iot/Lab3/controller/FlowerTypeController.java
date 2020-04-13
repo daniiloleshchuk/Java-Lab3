@@ -29,11 +29,11 @@ public class FlowerTypeController {
 
     @PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     public FlowerType createFlowerType(final @RequestBody FlowerType flowerType){
-        return flowerTypeService.createFlowerType(flowerType);
+        return flowerTypeService.create(flowerType);
     }
 
     @DeleteMapping(path = "/{id}")
     public void deleteById(final @PathVariable("id") Integer flowerTypeId){
-        flowerTypeService.deleteFlowerTypeById(flowerTypeId);
+        flowerTypeService.deleteById(flowerTypeId);
     }
 }

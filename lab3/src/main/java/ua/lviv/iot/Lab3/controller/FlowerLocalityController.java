@@ -27,7 +27,7 @@ public class FlowerLocalityController {
 
     @PostMapping
     public FlowerLocality createFlowerLocality(final @RequestBody FlowerLocality flowerLocality){
-        return flowerLocalityService.createFlowerLocality(flowerLocality);
+        return flowerLocalityService.create(flowerLocality);
     }
 
     @DeleteMapping("/{id}")
