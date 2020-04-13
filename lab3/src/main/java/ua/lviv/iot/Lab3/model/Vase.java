@@ -4,7 +4,7 @@ public class Vase extends Product {
     private int volumeInMl;
 
     public Vase() {
-        this( null, 0, 0, 0);
+        this(null, 0, 0, 0);
     }
 
     public Vase(final String color,

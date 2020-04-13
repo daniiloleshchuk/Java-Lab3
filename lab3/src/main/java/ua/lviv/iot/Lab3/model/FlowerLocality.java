@@ -14,8 +14,8 @@ public class FlowerLocality {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "Flowers_Localities",
-            joinColumns = { @JoinColumn(name = "flower_locality_id", nullable = false)},
-            inverseJoinColumns = { @JoinColumn(name = "flower_id", nullable = false)})
+            joinColumns = {@JoinColumn(name = "flower_locality_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "flower_id", nullable = false)})
     @JsonIgnoreProperties("localities")
     private Set<Flower> flowers;
 
@@ -47,7 +47,6 @@ public class FlowerLocality {
     public void setName(String name) {
         this.name = name;
     }
-
 
 
 }
