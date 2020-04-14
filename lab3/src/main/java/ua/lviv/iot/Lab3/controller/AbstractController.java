@@ -11,7 +11,7 @@ public abstract class AbstractController<T> {
     protected abstract AbstractService<T> getService();
 
     @GetMapping
-    public final ResponseEntity getFlowers() {
+    public final ResponseEntity findAll() {
         if (getService().findAll() != null) {
             return new ResponseEntity<>(getService().findAll(), HttpStatus.OK);
         } else {
@@ -20,7 +20,7 @@ public abstract class AbstractController<T> {
     }
 
     @GetMapping(path = "/{id}")
-    public final ResponseEntity getFlowerById(final @PathVariable("id") Integer flowerId) {
+    public final ResponseEntity findById(final @PathVariable("id") Integer flowerId) {
         if (getService() != null) {
             return new ResponseEntity<>(getService().findById(flowerId), HttpStatus.OK);
         }
@@ -28,7 +28,7 @@ public abstract class AbstractController<T> {
     }
 
     @PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
-    public final ResponseEntity createFlower(final @RequestBody T t) {
+    public final ResponseEntity create(final @RequestBody T t) {
         if (t != null) {
             return new ResponseEntity<>(getService().create(t), HttpStatus.OK);
         } else {
@@ -37,7 +37,7 @@ public abstract class AbstractController<T> {
     }
 
     @DeleteMapping(path = "/{id}")
-    public final ResponseEntity deleteFlowerById(final @PathVariable("id") Integer flowerId) {
+    public final ResponseEntity deleteById(final @PathVariable("id") Integer flowerId) {
         if (getService().deleteById(flowerId)) {
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
@@ -46,8 +46,8 @@ public abstract class AbstractController<T> {
     }
 
     @PutMapping(path = "/{id}")
-    public final ResponseEntity updateFlowerById(final @PathVariable("id") Integer flowerId,
-                                                 final @RequestBody T t) {
+    public final ResponseEntity updateById(final @PathVariable("id") Integer flowerId,
+                                           final @RequestBody T t) {
         T tBeforeUpdate = getService().findById(flowerId);
         if (tBeforeUpdate == null) {
             return ResponseEntity.notFound().build();
