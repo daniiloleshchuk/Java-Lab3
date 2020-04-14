@@ -7,11 +7,13 @@ public abstract class AbstractService<T> {
 
     protected abstract JpaRepository<T, Integer> getRepository();
 
+    public abstract T update(final T t, final Integer id);
+
     public final List findAll() {
         return getRepository().findAll();
     }
 
-    public final T findById(Integer id) {
+    public final T findById(final Integer id) {
         return getRepository().findById(id).get();
     }
 
@@ -19,8 +21,13 @@ public abstract class AbstractService<T> {
         return getRepository().save(t);
     }
 
-    public final void deleteById(final Integer id) {
-        getRepository().deleteById(id);
+    public final boolean deleteById(final Integer id) {
+        if (getRepository().existsById(id)) {
+            getRepository().deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

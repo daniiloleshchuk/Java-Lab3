@@ -17,4 +17,16 @@ public class FlowerTypeService extends AbstractService<FlowerType> {
         return flowerTypeRepository;
     }
 
+    @Override
+    public FlowerType update(final FlowerType flowerType, final Integer id) {
+        if (flowerTypeRepository.existsById(id)) {
+            this.deleteById(id);
+            flowerType.setId(id);
+            flowerTypeRepository.save(flowerType);
+            return flowerType;
+        } else {
+            return null;
+        }
+    }
+
 }

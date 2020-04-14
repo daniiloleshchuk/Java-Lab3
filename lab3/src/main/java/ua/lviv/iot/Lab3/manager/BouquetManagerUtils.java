@@ -64,7 +64,7 @@ public class BouquetManagerUtils {
     }
 
     public final void setCompareByColor(final Comparator<Flower> compareViaColor) {
-        this.compareByColor = compareViaColor;
+        compareByColor = compareViaColor;
     }
 
     //static inner class with comparator

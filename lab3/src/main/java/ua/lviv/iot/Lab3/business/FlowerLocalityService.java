@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import ua.lviv.iot.Lab3.dataaccess.FlowerLocalityRepository;
 import ua.lviv.iot.Lab3.model.FlowerLocality;
 
-
 @Service
 public class FlowerLocalityService extends AbstractService<FlowerLocality> {
 
@@ -16,6 +15,17 @@ public class FlowerLocalityService extends AbstractService<FlowerLocality> {
     @Override
     protected final JpaRepository<FlowerLocality, Integer> getRepository() {
         return flowerLocalityRepository;
+    }
+
+    @Override
+    public final FlowerLocality update(final FlowerLocality flowerLocality, final Integer id) {
+        if (flowerLocalityRepository.existsById(id)) {
+            this.deleteById(id);
+            flowerLocalityRepository.save(flowerLocality);
+            return flowerLocality;
+        } else {
+            return null;
+        }
     }
 
 }

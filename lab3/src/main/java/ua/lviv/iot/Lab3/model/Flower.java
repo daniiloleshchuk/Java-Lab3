@@ -66,5 +66,4 @@ public class Flower extends Product {
         this.localities = localities;
     }
 
-
 }
