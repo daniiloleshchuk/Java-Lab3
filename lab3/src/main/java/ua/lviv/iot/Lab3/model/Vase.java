@@ -4,13 +4,13 @@ public class Vase extends Product {
     private int volumeInMl;
 
     public Vase() {
-        this(null, null, 0, 0, 0);
+        this(null, 0, 0, 0);
     }
 
-    public Vase(final String typeOfProduct, final String color,
+    public Vase(final String color,
                 final int heightInSm, final double priceInUAH,
                 final int volumeOfVaseInMl) {
-        super(typeOfProduct, color, heightInSm, priceInUAH);
+        super(color, heightInSm, priceInUAH);
         this.volumeInMl = volumeOfVaseInMl;
     }
 

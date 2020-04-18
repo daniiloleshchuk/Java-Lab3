@@ -1,42 +1,45 @@
 package ua.lviv.iot.Lab3.model;
 
-import org.hibernate.annotations.DynamicUpdate;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@DynamicUpdate
 public class Flower extends Product {
-    private String typeOfFlower;
+
     private int howMuchDaysCanLive;
 
-    Flower() {
-        this(null, null, 0, 0, null, 0);
-    }
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "flower_type_id")
+    @JsonIgnoreProperties("flowers")
+    private FlowerType flowerType;
 
-    public Flower(final String typeOfProduct, final String color,
-                  final int heightInSm, final double priceInUAH,
-                  final String flowerType, final int howMuchDaysLive) {
-        super(typeOfProduct, color, heightInSm, priceInUAH);
-        this.typeOfFlower = flowerType;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "Flowers_Localities",
+            joinColumns = {@JoinColumn(name = "flower_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "flower_locality_id", nullable = true)})
+    @JsonIgnoreProperties("flowers")
+    private Set<FlowerLocality> localities;
+
+    public Flower(final String color, final int heightInSm, final double priceInUAH, final int howMuchDaysLive) {
+        super(color, heightInSm, priceInUAH);
         this.howMuchDaysCanLive = howMuchDaysLive;
     }
 
+    public Flower() {
+        super();
+    }
+
+    @JsonIgnore
     public final String getHeaders() {
         return super.getHeaders() + "," + " typeOfFlower" + "," + " howMuchDaysCanLive ";
     }
 
     public final String toCSV() {
-        return super.toCSV() + "," + " typeOfFlower = " + getTypeOfFlower() + ","
-                + " howMuchDaysCanLive = " + getHowMuchDaysCanLive();
-    }
-
-    public String getTypeOfFlower() {
-        return typeOfFlower;
-    }
-
-    public void setTypeOfFlower(final String typeOfFlower) {
-        this.typeOfFlower = typeOfFlower;
+        return super.toCSV() + "," + " typeOfFlower = " + " howMuchDaysCanLive = " + getHowMuchDaysCanLive();
     }
 
     public int getHowMuchDaysCanLive() {
@@ -46,4 +49,21 @@ public class Flower extends Product {
     public void setHowMuchDaysCanLive(final int howMuchDaysLive) {
         this.howMuchDaysCanLive = howMuchDaysLive;
     }
+
+    public FlowerType getFlowerType() {
+        return flowerType;
+    }
+
+    public void setFlowerType(FlowerType flowerType) {
+        this.flowerType = flowerType;
+    }
+
+    public Set<FlowerLocality> getLocalities() {
+        return localities;
+    }
+
+    public void setLocalities(Set<FlowerLocality> localities) {
+        this.localities = localities;
+    }
+
 }
